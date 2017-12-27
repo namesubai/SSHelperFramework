@@ -128,6 +128,8 @@
 		A75316031FECF660009801A5 /* SSHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A75316021FECF660009801A5 /* SSHelperUITests.m */; };
 		A753161A1FECFC07009801A5 /* SSHelperConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A75316191FECFC07009801A5 /* SSHelperConfig.m */; };
 		A753161F1FED085F009801A5 /* UIColor+SSHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A753161E1FED085F009801A5 /* UIColor+SSHelper.m */; };
+		A75BF36D1FF3318800DF83A2 /* WelcomShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BF36B1FF3318800DF83A2 /* WelcomShowView.m */; };
+		A75BF3711FF37F3000DF83A2 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = A75BF3701FF37F3000DF83A2 /* Aspects.m */; };
 		A76909AB1FF087EF00EC75AA /* NSObject+SSRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909AA1FF087EF00EC75AA /* NSObject+SSRouter.m */; };
 		A76909B21FF08C8D00EC75AA /* SSBasicNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909AC1FF08C8D00EC75AA /* SSBasicNavigationController.m */; };
 		A76909B31FF08C8D00EC75AA /* SSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909AD1FF08C8D00EC75AA /* SSTabBar.m */; };
@@ -405,6 +407,10 @@
 		A753161D1FED085F009801A5 /* UIColor+SSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SSHelper.h"; sourceTree = "<group>"; };
 		A753161E1FED085F009801A5 /* UIColor+SSHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SSHelper.m"; sourceTree = "<group>"; };
 		A75316201FED097D009801A5 /* SSHelperKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSHelperKit.h; sourceTree = "<group>"; };
+		A75BF36B1FF3318800DF83A2 /* WelcomShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomShowView.m; sourceTree = "<group>"; };
+		A75BF36C1FF3318800DF83A2 /* WelcomShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomShowView.h; sourceTree = "<group>"; };
+		A75BF36F1FF37F3000DF83A2 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		A75BF3701FF37F3000DF83A2 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		A76909A91FF087EF00EC75AA /* NSObject+SSRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SSRouter.h"; sourceTree = "<group>"; };
 		A76909AA1FF087EF00EC75AA /* NSObject+SSRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SSRouter.m"; sourceTree = "<group>"; };
 		A76909AC1FF08C8D00EC75AA /* SSBasicNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBasicNavigationController.m; sourceTree = "<group>"; };
@@ -468,6 +474,7 @@
 		A70F4F831FF2274F00AE21A1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A75BF36E1FF37F3000DF83A2 /* Aspects */,
 				A70F50F51FF2473500AE21A1 /* AFNetworking */,
 				A70F50C11FF2429B00AE21A1 /* WebViewJavascriptBridge */,
 				A70F506F1FF2354A00AE21A1 /* Masonry */,
@@ -911,6 +918,7 @@
 		A75316151FECFB90009801A5 /* SSUI */ = {
 			isa = PBXGroup;
 			children = (
+				A75BF36A1FF3316C00DF83A2 /* WelcomShowView */,
 				A70F50CE1FF2433900AE21A1 /* TZImagePickerController */,
 				A70F50BA1FF23AF200AE21A1 /* TitleTextFieldView */,
 				A70F50B31FF2361D00AE21A1 /* NetworkImageView */,
@@ -1014,6 +1022,24 @@
 				A70F4F7A1FF2212100AE21A1 /* SSHelperResource.bundle */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		A75BF36A1FF3316C00DF83A2 /* WelcomShowView */ = {
+			isa = PBXGroup;
+			children = (
+				A75BF36C1FF3318800DF83A2 /* WelcomShowView.h */,
+				A75BF36B1FF3318800DF83A2 /* WelcomShowView.m */,
+			);
+			path = WelcomShowView;
+			sourceTree = "<group>";
+		};
+		A75BF36E1FF37F3000DF83A2 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				A75BF36F1FF37F3000DF83A2 /* Aspects.h */,
+				A75BF3701FF37F3000DF83A2 /* Aspects.m */,
+			);
+			path = Aspects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1163,6 +1189,7 @@
 				A70F501D1FF2320E00AE21A1 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A70F50CC1FF2429B00AE21A1 /* WebViewJavascriptBridgeBase.m in Sources */,
 				A70F50661FF2331700AE21A1 /* MJRefreshGifHeader.m in Sources */,
+				A75BF36D1FF3318800DF83A2 /* WelcomShowView.m in Sources */,
 				A70F4F8D1FF22AF500AE21A1 /* NSDate+Add.m in Sources */,
 				A70F50F41FF2466100AE21A1 /* HttpRequestConfig.m in Sources */,
 				A70F50E41FF2433900AE21A1 /* TZImageManager.m in Sources */,
@@ -1262,6 +1289,7 @@
 				A70F50F21FF2466100AE21A1 /* BasicModel.m in Sources */,
 				A70F50E81FF2433900AE21A1 /* TZPhotoPreviewCell.m in Sources */,
 				A70F50931FF2354A00AE21A1 /* View+MASAdditions.m in Sources */,
+				A75BF3711FF37F3000DF83A2 /* Aspects.m in Sources */,
 				A70F4F6F1FF1EE5900AE21A1 /* UIAlertView+Blocks.m in Sources */,
 				A70F50181FF2320E00AE21A1 /* SDWebImageManager.m in Sources */,
 				A70F50E61FF2433900AE21A1 /* TZImagePickerController.m in Sources */,

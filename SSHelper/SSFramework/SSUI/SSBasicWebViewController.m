@@ -51,7 +51,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self setleftButtons];
+    [self setleftButtons];
 
 }
 
