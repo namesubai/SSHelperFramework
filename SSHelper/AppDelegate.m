@@ -22,6 +22,7 @@
     [WelcomShowView showWelcomViewOnlyOneceTimeImages:@[@"",@"",@""] hideCompletion:^(WelcomShowView *view) {
         
     }];
+    
     return YES;
 }
 

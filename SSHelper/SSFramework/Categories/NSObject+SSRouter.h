@@ -25,4 +25,8 @@
 - (void)presentVCWithClassKey:(id)classKey params:(NSDictionary *)params finish:(void(^)(void))finish;
 - (void)dimissVCFinish:(void(^)(void))finish;
 
+//
+- (UINavigationController *)visibleNavigationController;
+- (UIViewController *)visibleViewController;
+
 @end
