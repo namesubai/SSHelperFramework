@@ -142,6 +142,7 @@
 		A76909C71FF0A9BF00EC75AA /* SSBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909BD1FF0A9BF00EC75AA /* SSBasicTableViewCell.m */; };
 		A76909C81FF0A9BF00EC75AA /* SSBasicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909BE1FF0A9BF00EC75AA /* SSBasicPageViewController.m */; };
 		A76909C91FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909C21FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m */; };
+		A7F7F022201F4185000112BB /* SSCookiesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7F021201F4185000112BB /* SSCookiesManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,6 +437,8 @@
 		A76909C11FF0A9BF00EC75AA /* SSBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBasicViewController.h; sourceTree = "<group>"; };
 		A76909C21FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicRefreshTableViewCell.m; sourceTree = "<group>"; };
 		A76909C31FF0A9BF00EC75AA /* BasicRefreshTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicRefreshTableViewCell.h; sourceTree = "<group>"; };
+		A7F7F020201F4185000112BB /* SSCookiesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSCookiesManager.h; sourceTree = "<group>"; };
+		A7F7F021201F4185000112BB /* SSCookiesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSCookiesManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -946,6 +949,8 @@
 				A76909BC1FF0A9BF00EC75AA /* SSBasicViewController.m */,
 				A76909B81FF0A9BF00EC75AA /* SSBasicWebViewController.h */,
 				A76909BA1FF0A9BF00EC75AA /* SSBasicWebViewController.m */,
+				A7F7F020201F4185000112BB /* SSCookiesManager.h */,
+				A7F7F021201F4185000112BB /* SSCookiesManager.m */,
 				A76909B01FF08C8D00EC75AA /* SSBasicNavigationController.h */,
 				A76909AC1FF08C8D00EC75AA /* SSBasicNavigationController.m */,
 				A76909AE1FF08C8D00EC75AA /* SSTabBar.h */,
@@ -1262,6 +1267,7 @@
 				A70F508F1FF2354A00AE21A1 /* MASViewAttribute.m in Sources */,
 				A76909C91FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m in Sources */,
 				A70F506D1FF2331700AE21A1 /* UIScrollView+MJRefresh.m in Sources */,
+				A7F7F022201F4185000112BB /* SSCookiesManager.m in Sources */,
 				A70F506C1FF2331700AE21A1 /* UIScrollView+MJExtension.m in Sources */,
 				A7599BDE1FFE1E4D005DBC60 /* SwiftViewController.swift in Sources */,
 				A70F50BD1FF23B0E00AE21A1 /* TitleTextFieldView.m in Sources */,

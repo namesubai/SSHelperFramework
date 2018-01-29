@@ -10,9 +10,10 @@
 #import "Masonry.h"
 #import "SSHelperDefine.h"
 #import "Categorise.h"
+#import "SSCookiesManager.h"
 
 
-@interface SSBasicWebViewController () <WKNavigationDelegate,WKScriptMessageHandler>
+@interface SSBasicWebViewController () <WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate>
 
 {
     WebViewJavascriptBridge* bridge;
@@ -58,6 +59,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
+
+
     self.isAutoChangeTitle = YES;
     
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
@@ -79,6 +82,7 @@
         [config setMediaPlaybackRequiresUserAction:NO];
     }
     
+    //通过 document.cookie 设置 Cookie 解决后续页面(同域)Ajax、iframe 请求的 Cookie 问题；
     //取出 storage 中的cookie并将其拼接成正确的形式
     NSArray<NSHTTPCookie *> *tmp = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
     NSMutableString *jscode_Cookie = [@"" mutableCopy];
@@ -88,7 +92,7 @@
     }];
     
     WKUserContentController* userContentController = WKUserContentController.new;
-    WKUserScript * cookieScript = [[WKUserScript alloc] initWithSource: @"" injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+    WKUserScript * cookieScript = [[WKUserScript alloc] initWithSource: jscode_Cookie injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
     
     [userContentController addUserScript:cookieScript];
     WKWebViewConfiguration* webViewConfig = WKWebViewConfiguration.new;
@@ -98,7 +102,9 @@
     [_wkWebView sizeToFit];
     _wkWebView.navigationDelegate = self;
     [self.view addSubview:_wkWebView];
-    
+    _wkWebView.scrollView.contentInset = UIEdgeInsetsMake(self.navHeight, 0, 49, 0);
+    //史诗级神坑，为何如此写呢？参考https://opensource.apple.com/source/WebKit2/WebKit2-7600.1.4.11.10/ChangeLog
+    [_wkWebView setValue:[NSValue valueWithUIEdgeInsets:self.wkWebView.scrollView.contentInset] forKey:@"_obscuredInsets"]; //kvc给WKWebView的私有变量_obscuredInsets设置值
     
   
     
@@ -293,6 +299,7 @@
     if (_webUrl.length) {
         NSLog(@"%@",_webUrl);
         
+
         if ([[UIDevice currentDevice].systemVersion floatValue]>=9.0) {
             //清楚缓存
             NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
@@ -305,8 +312,17 @@
         
         NSString *urlStr =[_webUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"`%^{}\"[]|\\<> "].invertedSet];
         
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlStr] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
         
+        NSString *value = [[SSCookiesManager sharedInstance] getRequestCookieHeaderForURL:[NSURL URLWithString:urlStr]];
+        [request setValue:value forHTTPHeaderField:@"Cookie"];
+        
+//        //解决首次加载Cookie带不上问题
+//        NSArray *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies;
+//        //Cookies数组转换为requestHeaderFields
+//        NSDictionary *requestHeaderFields = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
+//        //设置请求头
+//        request.allHTTPHeaderFields = requestHeaderFields;
         
         [self.wkWebView loadRequest:request];
         
@@ -446,6 +462,16 @@
     //
     //    }
     
+}
+//js alert方法不弹窗
+//之前提过WKUIDelegate所有的方法都是Optional，但如果你不实现，它就会
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
+    
+}
+
+//当WKWebView加载的网页占用内存过大时，会出现白屏现象
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    [webView reload];   //刷新就好了
 }
 
 //- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{

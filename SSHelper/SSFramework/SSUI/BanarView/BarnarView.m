@@ -284,6 +284,7 @@
         if (item==0) {
             item = self.images.count-1;
             section--;
+            
         }else{
             item--;
         }
