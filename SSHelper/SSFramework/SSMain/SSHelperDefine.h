@@ -11,6 +11,9 @@
 #import "SSHelperConfig.h"
 #import "UIImage+Add.h"
 
+#define NSLog(format, ...) fprintf(stderr,"\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[[NSString alloc] initWithData:[[NSString stringWithFormat:format, ##__VA_ARGS__] dataUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding] UTF8String]);
+
+
 #define  SSHELPER_BUNDLE_IMAGEPATH  @"SSHelperResource.bundle/images"
 
 //配置部分的宏
