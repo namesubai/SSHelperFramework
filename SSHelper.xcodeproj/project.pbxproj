@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A704DA13205BEBB00031777E /* SSCacheBaseData.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA08205BEBAF0031777E /* SSCacheBaseData.m */; };
+		A704DA14205BEBB00031777E /* SSCacheDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA0A205BEBAF0031777E /* SSCacheDataCenter.m */; };
+		A704DA15205BEBB00031777E /* SSHttpConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA0C205BEBAF0031777E /* SSHttpConfig.m */; };
+		A704DA16205BEBB00031777E /* SSHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA0E205BEBAF0031777E /* SSHttpRequest.m */; };
+		A704DA1B205BF00E0031777E /* SSHttpRequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA1A205BF00E0031777E /* SSHttpRequestConfig.m */; };
+		A704DA1E205BF04A0031777E /* SSHttpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A704DA1D205BF04A0031777E /* SSHttpResponse.m */; };
 		A70F4F6B1FF1EE5900AE21A1 /* UIView+New.m in Sources */ = {isa = PBXBuildFile; fileRef = A70F4F571FF1EE5700AE21A1 /* UIView+New.m */; };
 		A70F4F6C1FF1EE5900AE21A1 /* NSObject+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A70F4F581FF1EE5700AE21A1 /* NSObject+Tool.m */; };
 		A70F4F6D1FF1EE5900AE21A1 /* UIView+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = A70F4F5C1FF1EE5700AE21A1 /* UIView+Badge.m */; };
@@ -163,6 +169,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A704DA07205BEBAF0031777E /* SSCacheBaseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCacheBaseData.h; sourceTree = "<group>"; };
+		A704DA08205BEBAF0031777E /* SSCacheBaseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCacheBaseData.m; sourceTree = "<group>"; };
+		A704DA09205BEBAF0031777E /* SSCacheDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCacheDataCenter.h; sourceTree = "<group>"; };
+		A704DA0A205BEBAF0031777E /* SSCacheDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCacheDataCenter.m; sourceTree = "<group>"; };
+		A704DA0B205BEBAF0031777E /* SSHttpConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpConfig.h; sourceTree = "<group>"; };
+		A704DA0C205BEBAF0031777E /* SSHttpConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpConfig.m; sourceTree = "<group>"; };
+		A704DA0D205BEBAF0031777E /* SSHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHttpRequest.h; sourceTree = "<group>"; };
+		A704DA0E205BEBAF0031777E /* SSHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHttpRequest.m; sourceTree = "<group>"; };
+		A704DA19205BF00E0031777E /* SSHttpRequestConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSHttpRequestConfig.h; sourceTree = "<group>"; };
+		A704DA1A205BF00E0031777E /* SSHttpRequestConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSHttpRequestConfig.m; sourceTree = "<group>"; };
+		A704DA1C205BF04A0031777E /* SSHttpResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSHttpResponse.h; sourceTree = "<group>"; };
+		A704DA1D205BF04A0031777E /* SSHttpResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSHttpResponse.m; sourceTree = "<group>"; };
 		A70F4F541FF1EE5700AE21A1 /* NSObject+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Tool.h"; sourceTree = "<group>"; };
 		A70F4F551FF1EE5700AE21A1 /* UIView+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Badge.h"; sourceTree = "<group>"; };
 		A70F4F561FF1EE5700AE21A1 /* Categorise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categorise.h; sourceTree = "<group>"; };
@@ -466,6 +484,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A704DA06205BEBAF0031777E /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				A704DA07205BEBAF0031777E /* SSCacheBaseData.h */,
+				A704DA08205BEBAF0031777E /* SSCacheBaseData.m */,
+				A704DA09205BEBAF0031777E /* SSCacheDataCenter.h */,
+				A704DA0A205BEBAF0031777E /* SSCacheDataCenter.m */,
+				A704DA0B205BEBAF0031777E /* SSHttpConfig.h */,
+				A704DA0C205BEBAF0031777E /* SSHttpConfig.m */,
+				A704DA0D205BEBAF0031777E /* SSHttpRequest.h */,
+				A704DA0E205BEBAF0031777E /* SSHttpRequest.m */,
+				A704DA19205BF00E0031777E /* SSHttpRequestConfig.h */,
+				A704DA1A205BF00E0031777E /* SSHttpRequestConfig.m */,
+				A704DA1C205BF04A0031777E /* SSHttpResponse.h */,
+				A704DA1D205BF04A0031777E /* SSHttpResponse.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		A70F4F7C1FF2232B00AE21A1 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +1001,7 @@
 		A75316161FECFB9D009801A5 /* SSNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				A704DA06205BEBAF0031777E /* Http */,
 				A70F50EC1FF2466100AE21A1 /* BasicModel.h */,
 				A70F50ED1FF2466100AE21A1 /* BasicModel.m */,
 				A70F50EF1FF2466100AE21A1 /* HttpRequest.h */,
@@ -1202,6 +1240,8 @@
 				A70F50661FF2331700AE21A1 /* MJRefreshGifHeader.m in Sources */,
 				A75BF36D1FF3318800DF83A2 /* WelcomShowView.m in Sources */,
 				A70F4F8D1FF22AF500AE21A1 /* NSDate+Add.m in Sources */,
+				A704DA16205BEBB00031777E /* SSHttpRequest.m in Sources */,
+				A704DA15205BEBB00031777E /* SSHttpConfig.m in Sources */,
 				A70F50F41FF2466100AE21A1 /* HttpRequestConfig.m in Sources */,
 				A70F50E41FF2433900AE21A1 /* TZImageManager.m in Sources */,
 				A70F50EB1FF2433900AE21A1 /* UIView+Layout.m in Sources */,
@@ -1217,6 +1257,7 @@
 				A70F50E21FF2433900AE21A1 /* TZAssetCell.m in Sources */,
 				A75315E31FECF660009801A5 /* ViewController.m in Sources */,
 				A76909C71FF0A9BF00EC75AA /* SSBasicTableViewCell.m in Sources */,
+				A704DA14205BEBB00031777E /* SSCacheDataCenter.m in Sources */,
 				A70F4F891FF2277F00AE21A1 /* SSKeychain.m in Sources */,
 				A70F50121FF2320E00AE21A1 /* NSData+ImageContentType.m in Sources */,
 				A70F508D1FF2354A00AE21A1 /* MASConstraintMaker.m in Sources */,
@@ -1242,6 +1283,7 @@
 				A70F50681FF2331700AE21A1 /* MJRefreshStateHeader.m in Sources */,
 				A76909B21FF08C8D00EC75AA /* SSBasicNavigationController.m in Sources */,
 				A70F51061FF2473500AE21A1 /* AFURLRequestSerialization.m in Sources */,
+				A704DA1E205BF04A0031777E /* SSHttpResponse.m in Sources */,
 				A70F50AF1FF235CD00AE21A1 /* PlaceholderTextView.m in Sources */,
 				A70F50E91FF2433900AE21A1 /* TZPhotoPreviewController.m in Sources */,
 				A70F501E1FF2320E00AE21A1 /* UIImageView+WebCache.m in Sources */,
@@ -1256,6 +1298,7 @@
 				A70F4F6E1FF1EE5900AE21A1 /* UIViewController+Add.m in Sources */,
 				A70F50B11FF235CD00AE21A1 /* SQActionSheetView.m in Sources */,
 				A70F50291FF2320E00AE21A1 /* NSObject+MJProperty.m in Sources */,
+				A704DA1B205BF00E0031777E /* SSHttpRequestConfig.m in Sources */,
 				A70F50251FF2320E00AE21A1 /* MJPropertyType.m in Sources */,
 				A75315E01FECF660009801A5 /* AppDelegate.m in Sources */,
 				A70F50EA1FF2433900AE21A1 /* TZVideoPlayerController.m in Sources */,
@@ -1317,6 +1360,7 @@
 				A70F50B91FF2382800AE21A1 /* UIImage+Add.m in Sources */,
 				A76909B41FF08C8D00EC75AA /* SSTabBarViewController.m in Sources */,
 				A70F50221FF2320E00AE21A1 /* MJFoundation.m in Sources */,
+				A704DA13205BEBB00031777E /* SSCacheBaseData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
