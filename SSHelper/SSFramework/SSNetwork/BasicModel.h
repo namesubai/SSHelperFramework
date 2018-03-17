@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HttpRequest.h"
+#import "SSHttpRequest.h"
 #import "MJExtension.h"
 
 
@@ -23,7 +23,10 @@ typedef void (^responseHandler)(id dataObj, NSError *error,BOOL isCache);
 
 - (void)setupObject;
 
-
+//返回要替换的字段字典
+- (NSDictionary *)ss_replacedKeyFromPropertyName;
+//返回对应的数组字段
+- (NSDictionary *)ss_setupObjectClassInArray;
 /**
  *  get请求
  *
@@ -77,11 +80,11 @@ typedef void (^responseHandler)(id dataObj, NSError *error,BOOL isCache);
 
 
 
-+ (void)requestConfig:(HttpRequestConfig *)requestConfig
++ (void)requestConfig:(SSHttpRequestConfig *)requestConfig
             responseBlock:(responseHandler)responseDataBlock;
 
 
-+ (void)uploadRequestConfig:(HttpRequestConfig *)requestConfig
++ (void)uploadRequestConfig:(SSHttpRequestConfig *)requestConfig
              responseBlock:(responseHandler)responseDataBlock
             uploadProgress:(LoadProgress)progress;
 

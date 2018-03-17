@@ -14,6 +14,17 @@
     self = [super init];
     
     if (self) {
+        if ([self respondsToSelector:@selector(ss_replacedKeyFromPropertyName)]&&[self ss_replacedKeyFromPropertyName]) {
+            [self.class mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+                return [self ss_replacedKeyFromPropertyName];
+            }];
+        }
+        if ([self respondsToSelector:@selector(ss_setupObjectClassInArray)]&&[self ss_setupObjectClassInArray]) {
+            [self.class mj_setupObjectClassInArray:^NSDictionary *{
+                return [self ss_setupObjectClassInArray];
+            }];
+        }
+        
         [self setupObject];
     }
     
@@ -23,12 +34,21 @@
 - (void)setupObject{
  //子类重写
 }
+- (NSDictionary *)ss_replacedKeyFromPropertyName{
+    //子类重写
+    return nil;
+}
+
+- (NSDictionary *)ss_setupObjectClassInArray{
+    //子类重写
+    return nil;
+}
 
 + (void)getRequestURLStr:(NSString *)urlStr
                paramDict:(id)paramDict
                   isCash:(BOOL)isCash
            responseBlock:(responseHandler)responseDataBlock{
-    HttpRequestConfig *config = [[HttpRequestConfig alloc]init];
+    SSHttpRequestConfig *config = [[SSHttpRequestConfig alloc]init];
     config.requestUrl = urlStr;
     config.paramDict = paramDict;
     config.requestType = RequestTypeGet;
@@ -40,7 +60,7 @@
                 paramDict:(id)paramDict
                    isCash:(BOOL)isCash
             responseBlock:(responseHandler)responseDataBlock{
-    HttpRequestConfig *config = [[HttpRequestConfig alloc]init];
+    SSHttpRequestConfig *config = [[SSHttpRequestConfig alloc]init];
     config.requestUrl = urlStr;
     config.requestType = RequestTypePost;
     config.paramDict = paramDict;
@@ -50,7 +70,7 @@
 }
 
 + (void)postRequestURLStr:(NSString *)urlStr paramDict:(id)paramDict isCash:(BOOL)isCash isNotShowLogin:(BOOL)isNotShowLogin responseBlock:(responseHandler)responseDataBlock{
-    HttpRequestConfig *config = [[HttpRequestConfig alloc]init];
+    SSHttpRequestConfig *config = [[SSHttpRequestConfig alloc]init];
     config.requestUrl = urlStr;
     config.requestType = RequestTypePost;
     config.paramDict = paramDict;
@@ -66,7 +86,7 @@
                    withDatas:(NSArray *)datas
               uploadProgress:(LoadProgress)loadProgress
                responseBlock:(responseHandler)responseDataBlock{
-    HttpRequestConfig *config = [[HttpRequestConfig alloc]init];
+    SSHttpRequestConfig *config = [[SSHttpRequestConfig alloc]init];
     config.requestUrl = urlStr;
     config.requestType = RequestTypeUpLoad;
     config.paramDict = paramDict;
@@ -78,25 +98,24 @@
 
 
 //
-+ (void)requestConfig:(HttpRequestConfig *)requestConfig
++ (void)requestConfig:(SSHttpRequestConfig *)requestConfig
         responseBlock:(responseHandler)responseDataBlock{
-    
-    [[HttpRequest sharedManager]requestWithConfig:requestConfig responseResult:^(NSDictionary *resuestDict, NSError *error, BOOL isCacheData) {
+    [[SSHttpRequest sharedManager]requestWithConfig:requestConfig responseResult:^(NSDictionary *resuestDict, SSHttpRequestConfig *requestConfig, NSError *error, BOOL isCacheData) {
         if (resuestDict) {
-        
+            
             id data = [self mj_objectWithKeyValues:resuestDict];
             !responseDataBlock?:responseDataBlock(data,nil,isCacheData);
         }else{
             !responseDataBlock?:responseDataBlock(nil,error,isCacheData);
         }
     }];
- 
+   
 }
 
-+ (void)uploadRequestConfig:(HttpRequestConfig *)requestConfig
++ (void)uploadRequestConfig:(SSHttpRequestConfig *)requestConfig
               responseBlock:(responseHandler)responseDataBlock
              uploadProgress:(LoadProgress)progress{
-    [[HttpRequest sharedManager]upLoadWithConfig:requestConfig responseResult:^(NSDictionary *resuestDict, NSError *error, BOOL isCacheData) {
+    [[SSHttpRequest sharedManager]upLoadWithConfig:requestConfig responseResult:^(NSDictionary *resuestDict, SSHttpRequestConfig *requestConfig, NSError *error, BOOL isCacheData) {
         if (resuestDict) {
             id data = [self mj_objectWithKeyValues:resuestDict];
             !responseDataBlock?:responseDataBlock(data,nil,isCacheData);

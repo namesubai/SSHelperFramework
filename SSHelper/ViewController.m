@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SSHelperDefine.h"
 #import "Categorise.h"
+#import "SSWaveView.h"
 
 @interface ViewController ()
 
@@ -66,6 +67,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = Color_Main;
     
+    SSWaveView *waveView = [[SSWaveView alloc]initWithFrame:CGRectMake(100, 500, 100, 100)];
+    waveView.progress = 0.7;
+    [self.view addSubview:waveView];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
