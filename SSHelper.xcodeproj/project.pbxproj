@@ -125,6 +125,7 @@
 		A70F51071FF2473500AE21A1 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A70F51001FF2473500AE21A1 /* AFURLResponseSerialization.m */; };
 		A70F51081FF2473500AE21A1 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A70F51021FF2473500AE21A1 /* AFURLSessionManager.m */; };
 		A71849CE205D57C60050A207 /* SSWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71849CD205D57C60050A207 /* SSWaveView.m */; };
+		A747D32F205FA1EF00E0FDA6 /* TextPathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A747D32E205FA1EF00E0FDA6 /* TextPathHelper.m */; };
 		A75315E01FECF660009801A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A75315DF1FECF660009801A5 /* AppDelegate.m */; };
 		A75315E31FECF660009801A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A75315E21FECF660009801A5 /* ViewController.m */; };
 		A75315E61FECF660009801A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75315E41FECF660009801A5 /* Main.storyboard */; };
@@ -149,6 +150,7 @@
 		A76909C71FF0A9BF00EC75AA /* SSBasicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909BD1FF0A9BF00EC75AA /* SSBasicTableViewCell.m */; };
 		A76909C81FF0A9BF00EC75AA /* SSBasicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909BE1FF0A9BF00EC75AA /* SSBasicPageViewController.m */; };
 		A76909C91FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A76909C21FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m */; };
+		A7D3E138205FA6BC00FBE4A4 /* TextPathDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D3E137205FA6BC00FBE4A4 /* TextPathDemo.m */; };
 		A7F7F022201F4185000112BB /* SSCookiesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F7F021201F4185000112BB /* SSCookiesManager.m */; };
 /* End PBXBuildFile section */
 
@@ -408,6 +410,8 @@
 		A70F51021FF2473500AE21A1 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		A71849CC205D57C60050A207 /* SSWaveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSWaveView.h; sourceTree = "<group>"; };
 		A71849CD205D57C60050A207 /* SSWaveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSWaveView.m; sourceTree = "<group>"; };
+		A747D32D205FA1EF00E0FDA6 /* TextPathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPathHelper.h; sourceTree = "<group>"; };
+		A747D32E205FA1EF00E0FDA6 /* TextPathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPathHelper.m; sourceTree = "<group>"; };
 		A75315DB1FECF660009801A5 /* SSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75315DE1FECF660009801A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A75315DF1FECF660009801A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 		A76909C11FF0A9BF00EC75AA /* SSBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBasicViewController.h; sourceTree = "<group>"; };
 		A76909C21FF0A9BF00EC75AA /* BasicRefreshTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicRefreshTableViewCell.m; sourceTree = "<group>"; };
 		A76909C31FF0A9BF00EC75AA /* BasicRefreshTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicRefreshTableViewCell.h; sourceTree = "<group>"; };
+		A7D3E136205FA6BC00FBE4A4 /* TextPathDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPathDemo.h; sourceTree = "<group>"; };
+		A7D3E137205FA6BC00FBE4A4 /* TextPathDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextPathDemo.m; sourceTree = "<group>"; };
 		A7F7F020201F4185000112BB /* SSCookiesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSCookiesManager.h; sourceTree = "<group>"; };
 		A7F7F021201F4185000112BB /* SSCookiesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSCookiesManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -901,6 +907,17 @@
 			path = SSWaveView;
 			sourceTree = "<group>";
 		};
+		A747D32C205FA1D700E0FDA6 /* TextDrawAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				A7D3E136205FA6BC00FBE4A4 /* TextPathDemo.h */,
+				A7D3E137205FA6BC00FBE4A4 /* TextPathDemo.m */,
+				A747D32D205FA1EF00E0FDA6 /* TextPathHelper.h */,
+				A747D32E205FA1EF00E0FDA6 /* TextPathHelper.m */,
+			);
+			path = TextDrawAnimation;
+			sourceTree = "<group>";
+		};
 		A75315D21FECF660009801A5 = {
 			isa = PBXGroup;
 			children = (
@@ -975,6 +992,7 @@
 		A75316151FECFB90009801A5 /* SSUI */ = {
 			isa = PBXGroup;
 			children = (
+				A747D32C205FA1D700E0FDA6 /* TextDrawAnimation */,
 				A71849CB205D57A50050A207 /* SSWaveView */,
 				A75BF36A1FF3316C00DF83A2 /* WelcomShowView */,
 				A70F50CE1FF2433900AE21A1 /* TZImagePickerController */,
@@ -1261,6 +1279,7 @@
 				A70F501F1FF2320E00AE21A1 /* UIView+WebCacheOperation.m in Sources */,
 				A76909B71FF09CB200EC75AA /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A70F50E71FF2433900AE21A1 /* TZPhotoPickerController.m in Sources */,
+				A747D32F205FA1EF00E0FDA6 /* TextPathHelper.m in Sources */,
 				A76909AB1FF087EF00EC75AA /* NSObject+SSRouter.m in Sources */,
 				A70F4F701FF1EE5900AE21A1 /* NSObject+HUD.m in Sources */,
 				A70F50AE1FF235CD00AE21A1 /* NoneView.m in Sources */,
@@ -1356,6 +1375,7 @@
 				A70F50241FF2320E00AE21A1 /* MJPropertyKey.m in Sources */,
 				A70F50281FF2320E00AE21A1 /* NSObject+MJKeyValue.m in Sources */,
 				A70F501C1FF2320E00AE21A1 /* UIImage+MultiFormat.m in Sources */,
+				A7D3E138205FA6BC00FBE4A4 /* TextPathDemo.m in Sources */,
 				A70F50F21FF2466100AE21A1 /* BasicModel.m in Sources */,
 				A70F50E81FF2433900AE21A1 /* TZPhotoPreviewCell.m in Sources */,
 				A70F50931FF2354A00AE21A1 /* View+MASAdditions.m in Sources */,

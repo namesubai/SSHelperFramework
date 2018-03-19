@@ -10,6 +10,7 @@
 #import "SSHelperDefine.h"
 #import "Categorise.h"
 #import "SSWaveView.h"
+#import "TextPathDemo.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,10 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self dismiss];
     });
+}
+- (IBAction)textDrawAnimotion:(id)sender {
+    TextPathDemo *domo = [TextPathDemo new];
+    [self presentViewController:domo animated:YES completion:nil];
 }
 
 - (IBAction)action:(id)sender {
@@ -70,6 +75,9 @@
     SSWaveView *waveView = [[SSWaveView alloc]initWithFrame:CGRectMake(100, 500, 100, 100)];
     waveView.progress = 0.7;
     [self.view addSubview:waveView];
+    
+    
+    
     
     // Do any additional setup after loading the view, typically from a nib.
 }
