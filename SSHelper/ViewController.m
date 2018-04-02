@@ -11,6 +11,50 @@
 #import "Categorise.h"
 #import "SSWaveView.h"
 #import "TextPathDemo.h"
+#import "Masonry.h"
+@interface ScaleView:UIView
+{
+    BOOL _isTap;
+}
+@property (nonatomic, strong) UIView *scaleView;
+@end
+
+@implementation ScaleView
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        UIView *scaleView = [[UIView alloc]initWithFrame:CGRectZero];
+        scaleView.backgroundColor = [UIColor redColor];
+        [self addSubview:scaleView];
+        [scaleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.right.bottom.equalTo(@0);
+        }];
+        self.scaleView = scaleView;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+        [scaleView addGestureRecognizer:tap];
+    }
+    return self;
+}
+
+- (void)layoutSubviews{
+    self.scaleView.layer.position = CGPointMake(self.scaleView.frame.origin.x, self.scaleView.frame.origin.y);
+    self.scaleView.layer.anchorPoint = CGPointMake(0, 0);
+}
+- (void)tapAction:(UITapGestureRecognizer *)tap{
+    _isTap = !_isTap;
+    if (_isTap) {
+        [UIView animateWithDuration:0.2 animations:^{
+            tap.view.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        }];
+    }else{
+        [UIView animateWithDuration:0.2 animations:^{
+            tap.view.transform = CGAffineTransformIdentity;
+        }];
+    }
+}
+
+@end
 
 @interface ViewController ()
 
@@ -77,10 +121,21 @@
     [self.view addSubview:waveView];
     
     
+    ScaleView *scaleView = [[ScaleView alloc]initWithFrame:CGRectZero];
+    [self.view addSubview:scaleView];
+//    scaleView.layer.position = CGPointMake(scaleView.frame.origin.x, scaleView.frame.origin.y);
+//    scaleView.layer.anchorPoint = CGPointMake(0, 0);
+    [scaleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@100);
+        make.top.equalTo(@610);
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+    }];
     
+
     
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -90,3 +145,6 @@
 
 
 @end
+
+
+
